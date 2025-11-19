@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Store - Artists</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* انیمیشن ورود ملایم */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        /* تنظیمات شدت نور اینجاست:
+           برای پررنگ‌تر کردن، اعداد داخل rgba را زیاد کردیم.
+           مثلاً rgba(255, 255, 255, 0.35) یعنی 35% سفیدی خالص.
+        */
+        .fog-light {
+            /* گرادینت جدید و پررنگ‌تر */
+            background: radial-gradient(
+                circle at center, 
+                rgba(255, 255, 255, 0.35) 0%,   /* مرکز: خیلی روشن‌تر شد */
+                rgba(255, 255, 255, 0.15) 45%,  /* لایه وسط: واضح‌تر شد */
+                transparent 70%                 /* لبه: محو */
+            );
+            
+            opacity: 0; /* در حالت عادی خاموش */
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-out;
+            border-radius: 100%;
+            filter: blur(15px); /* بلور را کمی کمتر کردم تا نور متمرکزتر و تیزتر به نظر برسد */
+            transform: scale(0.8);
+        }
+
+        /* وقتی موس می‌رود روی دکمه */
+        .artist-link:hover .fog-light {
+            opacity: 1;
+            transform: scale(1.1); /* کمی بزرگ شدن نور */
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen m-0 p-0 overflow-hidden bg-black relative">
+
+    <!-- کانتینر پس‌زمینه -->
+    <div class="absolute inset-0 w-full h-full z-0" 
+         style="background-image: url('Artists.jpg'); background-size: cover; background-position: center bottom; background-repeat: no-repeat;">
+    </div>
+
+    <!-- لوگو (بالا وسط) -->
+    <a href="index.html" class="absolute top-8 left-1/2 transform -translate-x-1/2 z-30 w-24 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer">
+        <img src="Logo.png" alt="Home" class="w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+    </a>
+
+    <!-- کانتینر دکمه‌ها -->
+    <nav class="absolute bottom-[4%] left-[14%] w-[75%] h-[14%] z-20 grid grid-cols-4 items-center justify-items-center gap-4" dir="ltr">
+        
+        <!-- Link 1: PRESSA -->
+        <a href="#" class="artist-link relative w-full h-full flex items-center justify-center fade-in" style="animation-delay: 0.1s;">
+            <div class="fog-light absolute w-[120%] h-[150%] pointer-events-none"></div>
+        </a>
+
+        <!-- Link 2: NINA WOODS -->
+        <a href="#" class="artist-link relative w-full h-full flex items-center justify-center fade-in" style="animation-delay: 0.2s;">
+            <div class="fog-light absolute w-[120%] h-[150%] pointer-events-none"></div>
+        </a>
+
+        <!-- Link 3: POURIA K -->
+        <a href="#" class="artist-link relative w-full h-full flex items-center justify-center fade-in" style="animation-delay: 0.3s;">
+            <div class="fog-light absolute w-[120%] h-[150%] pointer-events-none"></div>
+        </a>
+
+        <!-- Link 4: BUNDOG -->
+        <a href="#" class="artist-link relative w-full h-full flex items-center justify-center fade-in" style="animation-delay: 0.4s;">
+            <div class="fog-light absolute w-[120%] h-[150%] pointer-events-none"></div>
+        </a>
+
+    </nav>
+
+</body>
+</html>

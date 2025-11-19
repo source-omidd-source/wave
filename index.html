@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Store</title>
+    
+    <style>
+        /* --- فونت اختصاصی --- */
+        @font-face {
+            font-family: 'MyCustomFont'; 
+            src: url('Helvetica Neue Bold Extended.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* --- تنظیمات کلی --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'MyCustomFont', sans-serif; 
+            overflow: hidden; 
+            direction: ltr; /* جهت چپ‌چین برای ترتیب درست منوها */
+        }
+
+        /* --- پس‌زمینه --- */
+        .bg-container {
+            background-image: url('Home Page Asli.jpg'); 
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- هدر و لوگو --- */
+        header {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- منوی وسط --- */
+        nav {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row; /* چیدمان افقی */
+            gap: 4vw;
+            list-style: none;
+            padding: 0 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 2.8rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-block;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .nav-links a:hover {
+            color: #f0f0f0;
+            transform: translateY(-5px) scale(1.02);
+            text-shadow: 0 10px 20px rgba(0,0,0,0.8);
+        }
+
+        /* --- ریسپانسیو --- */
+        @media (max-width: 768px) {
+            .bg-container {
+                background-position: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .nav-links a {
+                font-size: 2rem;
+            }
+
+            .logo {
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container">
+        <div class="overlay"></div>
+
+        <div class="content-wrapper">
+            <header>
+                <img src="Logo.png" alt="Wave Logo" class="logo">
+            </header>
+
+            <nav>
+                <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>       <!-- لینک به صفحه شاپ -->
+    <li><a href="artists.html">Artists</a></li> <!-- لینک به صفحه آرتیست‌ها -->
+    <li><a href="about.html">About Us</a></li>  <!-- لینک به صفحه درباره ما -->
+    <li><a href="contact.html">Contact Us</a></li> <!-- لینک به صفحه تماس -->
+</ul>
+            </nav>
+        </div>
+    </div>
+
+</body>
+</html>

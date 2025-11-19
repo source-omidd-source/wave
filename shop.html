@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Coming Soon</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* --- فونت اختصاصی --- */
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('Helvetica Neue Bold Extended.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'MyCustomFont', sans-serif;
+            background-color: black;
+            color: white;
+            overflow: hidden; /* بدون اسکرول */
+        }
+
+        /* --- انیمیشن لوپ (نفس‌کشیدن) --- */
+        @keyframes breathe {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(255,255,255,0.1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+                text-shadow: 0 0 25px rgba(255,255,255,0.4);
+            }
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(255,255,255,0.1);
+            }
+        }
+
+        .loop-animate {
+            animation: breathe 4s ease-in-out infinite; /* تکرار بی‌نهایت */
+        }
+    </style>
+</head>
+<body class="h-screen w-screen flex flex-col items-center justify-center relative">
+
+    <!-- لوگو (بازگشت به خانه) -->
+    <!-- همان جایگذاری استاندارد صفحات دیگر -->
+    <a href="index.html" class="absolute top-10 left-0 w-full flex justify-center z-50 opacity-80 hover:opacity-100 transition-opacity">
+         <!-- اگر لوگو باید وسط باشد طبق عکس هوم، یا گوشه چپ طبق عکس شاپ؟ 
+              در عکس Shop.png لوگو گوشه چپ است. -->
+    </a>
+    
+    <!-- لوگو گوشه چپ (طبق عکس Shop.png) -->
+    <a href="index.html" class="absolute top-6 left-6 z-50">
+        <img src="Logo.png" alt="Wave Logo" class="w-12 md:w-16 opacity-90 hover:opacity-100 transition-opacity duration-300">
+    </a>
+
+    <!-- متن وسط -->
+    <main class="flex-grow flex items-center justify-center">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl tracking-widest uppercase loop-animate select-none" style="font-weight: 900;">
+            COMING SOON
+        </h1>
+    </main>
+
+</body>
+</html>

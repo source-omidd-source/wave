@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Wave Store</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Updated to 6.5.1 for X icon support -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- فونت اختصاصی هلوتیکا --- */
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('Helvetica Neue Bold Extended.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'MyCustomFont', sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- انیمیشن‌ها --- */
+        @keyframes blurIn {
+            0% { filter: blur(0px) brightness(100%); transform: scale(1); }
+            100% { filter: blur(8px) brightness(40%); transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bg-animate {
+            animation: blurIn 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.5s; 
+        }
+
+        .content-animate {
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            animation-delay: 1.5s;
+        }
+        
+        .delay-1 { animation-delay: 1.8s; }
+        .delay-2 { animation-delay: 2.1s; }
+        .delay-3 { animation-delay: 2.4s; }
+
+        .social-icon {
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; /* اندازه ثابت برای کلیک راحت‌تر */
+            height: 40px;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.2);
+            color: #fbbf24;
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #666; }
+    </style>
+</head>
+<body class="relative w-full min-h-screen flex items-center justify-center">
+
+    <!-- لایه پس‌زمینه -->
+    <div class="fixed inset-0 w-full h-full z-0 overflow-hidden">
+        <img src="AboutUs.jpg" alt="City Background" 
+             class="w-full h-full object-cover bg-animate">
+    </div>
+
+    <!-- دکمه بازگشت -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 text-white/70 hover:text-white transition-colors">
+        <img src="Logo.png" alt="Home" class="w-12 opacity-80 hover:opacity-100 transition-opacity">
+    </a>
+
+    <!-- محتوای اصلی -->
+    <main class="relative z-10 container mx-auto px-6 py-12 flex flex-col items-center justify-center min-h-screen text-center">
+
+        <h1 class="text-4xl md:text-6xl mb-12 tracking-widest uppercase content-animate" style="font-weight: normal;">
+            ABOUT US
+        </h1>
+
+        <div class="max-w-5xl text-sm md:text-lg leading-relaxed space-y-8 text-gray-200 text-justify md:text-center tracking-wide">
+            <p class="content-animate delay-1">
+                Wave Foundation is a management and creative music company founded in 2021, Built on strategy, taste, and execution, Wave Foundation has become a key force in shaping the music culture - especially within the Persian music scene, where our influence and blueprint are widely adopted.
+            </p>
+            <p class="content-animate delay-1">
+                Our company sits at the intersection of music, business, and creativity - managing talent, building brands, and helping artists scale their vision globally. Whether it's strategy, creative direction, or business development, we operate with a hands-on, full-picture approach that adapts to each artist’s individual needs.
+            </p>
+            <p class="content-animate delay-2">
+                Our roster reflects who we are: sonically diverse and globally minded. We manage artists like 
+                <span class="text-white">Nina Woods</span>, an R&B artist and instrumentalist bringing live elements into the commercial space; 
+                <span class="text-white">Pressa and Bundog</span>, two of Canada’s most recognizable rap names, whose label Blue Feathers Records (BFR) we help run through a strategic partnership focused on operations and creative rollout; and 
+                <span class="text-white">Pouria K and Mersad</span>, Persian artists leading a new wave in the culture and sound of today’s Persian R&B and rap.
+            </p>
+            <p class="content-animate delay-2 text-white">
+                The name Wave Foundation speaks to our mission: every wave, every movement, trend, or sound, needs something solid behind it. That’s what we are: A foundation built to last, pushing the culture forward.
+            </p>
+        </div>
+
+        <!-- بخش سوشال مدیا (اصلاح شده) -->
+        <div class="mt-16 flex items-center gap-6 content-animate delay-3 bg-black/40 px-8 py-4 rounded-full backdrop-blur-sm border border-white/10">
+            
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@wfmgmt" target="_blank" class="social-icon text-2xl text-white" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/wfmgmt/" target="_blank" class="social-icon text-2xl text-white" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <!-- YouTube (فعال شد) -->
+            <!-- چون لینک یوتوب نداشتید، فعلاً # گذاشتم -->
+            <a href="#" class="social-icon text-2xl text-white" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <!-- X (Twitter) - آیکون جدید -->
+            <a href="https://x.com/wfmgmt" target="_blank" class="social-icon text-2xl text-white" title="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:Info@wavefoundation.co" class="social-icon text-2xl text-white" title="Email Us">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <div class="mt-8 text-xs text-gray-500 content-animate delay-3">
+            © 2024 Wave Foundation. All Rights Reserved.
+        </div>
+
+    </main>
+
+</body>
+</html>
